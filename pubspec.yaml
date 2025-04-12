@@ -1,0 +1,78 @@
+name: taskx
+description: The Smartest Way to Manage Tasks Between Friends, Teams & Startups
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Firebase
+  firebase_core: ^2.15.1
+  firebase_auth: ^4.9.0
+  cloud_firestore: ^4.9.1
+  firebase_storage: ^11.2.6
+  firebase_analytics: ^10.4.5
+  firebase_messaging: ^14.6.7
+  google_sign_in: ^6.1.5
+
+  # State Management
+  provider: ^6.0.5
+  flutter_riverpod: ^2.3.10
+
+  # UI Components
+  cupertino_icons: ^1.0.5
+  flutter_slidable: ^3.0.0
+  cached_network_image: ^3.2.3
+  image_picker: ^1.0.4
+  flutter_svg: ^2.0.7
+  lottie: ^2.6.0
+  shimmer: ^3.0.0
+  timeago: ^3.5.0
+  google_fonts: ^5.1.0
+
+  # Utils
+  intl: ^0.18.1
+  url_launcher: ^6.1.14
+  path_provider: ^2.1.1
+  shared_preferences: ^2.2.1
+  uuid: ^3.0.7
+  logger: ^1.4.0
+  connectivity_plus: ^4.0.2
+  package_info_plus: ^4.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.3
+  mockito: ^5.4.2
+  build_runner: ^2.4.6
+  flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.3.2
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/animations/
+    - assets/images/
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/app_icon.png"
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "assets/images/app_icon_foreground.png"
+
+flutter_native_splash:
+  color: "#536DFE"
+  image: assets/images/splash_logo.png
+  android_12:
+    image: assets/images/splash_logo.png
+    icon_background_color: "#536DFE"
+  fullscreen: true
