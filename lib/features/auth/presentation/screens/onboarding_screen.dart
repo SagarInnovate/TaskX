@@ -136,7 +136,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         ? 'Next'
                         : 'Get Started',
                     onPressed: _goToNextPage,
-                    style: ButtonStyle.primary,
+                    style: AppButtonStyle.primary,
                     width: 150,
                     height: 50,
                     icon: _currentPage < _pages.length - 1

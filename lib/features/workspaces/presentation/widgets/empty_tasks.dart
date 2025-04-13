@@ -1,7 +1,7 @@
 // lib/features/workspaces/presentation/widgets/empty_tasks.dart
 import 'package:flutter/material.dart';
 import '../../../../app/theme.dart';
-import '../../../../common/widgets/animated_button.dart';
+import '../../../../common/widgets/animated_button.dart' ;
 import '../../../../data/models/task_model.dart';
 
 class EmptyTasks extends StatefulWidget {
@@ -155,7 +155,7 @@ class _EmptyTasksState extends State<EmptyTasks>
                       text: 'Create Task',
                       onPressed: widget.onCreateTask,
                       icon: Icons.add,
-                      style: ButtonStyle.primary,
+                      style: AppButtonStyle.primary,
                       width: 200,
                       height: 48,
                     )
@@ -164,7 +164,7 @@ class _EmptyTasksState extends State<EmptyTasks>
                       onPressed: () {
                         // This will be handled by the parent to update the filter
                       },
-                      style: ButtonStyle.ghost,
+                      style: AppButtonStyle.ghost,
                       width: 200,
                       height: 48,
                     ),

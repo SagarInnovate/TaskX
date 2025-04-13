@@ -1,13 +1,12 @@
-// lib/common/widgets/animated_button.dart
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
-enum ButtonStyle { primary, secondary, success, danger, ghost }
+enum AppButtonStyle { primary, secondary, success, danger, ghost }
 
 class AnimatedButton extends StatefulWidget {
   final String text;
   final VoidCallback onPressed;
-  final ButtonStyle style;
+  final AppButtonStyle style;
   final bool isLoading;
   final bool isFullWidth;
   final IconData? icon;
@@ -19,7 +18,7 @@ class AnimatedButton extends StatefulWidget {
     Key? key,
     required this.text,
     required this.onPressed,
-    this.style = ButtonStyle.primary,
+    this.style = AppButtonStyle.primary,
     this.isLoading = false,
     this.isFullWidth = false,
     this.icon,
@@ -59,27 +58,27 @@ class _AnimatedButtonState extends State<AnimatedButton>
   Color _getButtonColor() {
     final theme = Theme.of(context);
     switch (widget.style) {
-      case ButtonStyle.primary:
+      case AppButtonStyle.primary:
         return theme.primaryColor;
-      case ButtonStyle.secondary:
+      case AppButtonStyle.secondary:
         return theme.colorScheme.secondary;
-      case ButtonStyle.success:
+      case AppButtonStyle.success:
         return Colors.green.shade600;
-      case ButtonStyle.danger:
+      case AppButtonStyle.danger:
         return Colors.red.shade600;
-      case ButtonStyle.ghost:
+      case AppButtonStyle.ghost:
         return Colors.transparent;
     }
   }
 
   Color _getTextColor() {
     switch (widget.style) {
-      case ButtonStyle.primary:
-      case ButtonStyle.secondary:
-      case ButtonStyle.success:
-      case ButtonStyle.danger:
+      case AppButtonStyle.primary:
+      case AppButtonStyle.secondary:
+      case AppButtonStyle.success:
+      case AppButtonStyle.danger:
         return Colors.white;
-      case ButtonStyle.ghost:
+      case AppButtonStyle.ghost:
         return Theme.of(context).primaryColor;
     }
   }
@@ -119,7 +118,7 @@ class _AnimatedButtonState extends State<AnimatedButton>
           decoration: BoxDecoration(
             color: _getButtonColor(),
             borderRadius: BorderRadius.circular(widget.borderRadius),
-            boxShadow: widget.style != ButtonStyle.ghost
+            boxShadow: widget.style != AppButtonStyle.ghost
                 ? [
                     BoxShadow(
                       color:
@@ -130,7 +129,7 @@ class _AnimatedButtonState extends State<AnimatedButton>
                     )
                   ]
                 : null,
-            border: widget.style == ButtonStyle.ghost
+            border: widget.style == AppButtonStyle.ghost
                 ? Border.all(color: Theme.of(context).primaryColor)
                 : null,
           ),

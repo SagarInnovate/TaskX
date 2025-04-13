@@ -1,4 +1,3 @@
-// lib/common/widgets/animated_card.dart
 import 'package:flutter/material.dart';
 
 class AnimatedCard extends StatefulWidget {
@@ -11,7 +10,7 @@ class AnimatedCard extends StatefulWidget {
   final double elevation;
   final bool isActive;
   final Duration animationDuration;
-  final BorderSide? border;
+  final Border? border; // 🔄 Changed from BorderSide? to Border?
 
   const AnimatedCard({
     Key? key,
@@ -24,7 +23,7 @@ class AnimatedCard extends StatefulWidget {
     this.elevation = 2.0,
     this.isActive = false,
     this.animationDuration = const Duration(milliseconds: 300),
-    this.border,
+    this.border, // Updated here
   }) : super(key: key);
 
   @override
@@ -94,7 +93,7 @@ class _AnimatedCardState extends State<AnimatedCard>
           decoration: BoxDecoration(
             color: bgColor,
             borderRadius: BorderRadius.circular(widget.borderRadius),
-            border: widget.border,
+            border: widget.border, // ✅ Now accepts full Border object
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withOpacity(_isPressed ? 0.1 : 0.08),
@@ -135,7 +134,7 @@ class _AnimatedCardState extends State<AnimatedCard>
                       child: InkWell(
                         borderRadius:
                             BorderRadius.circular(widget.borderRadius),
-                        onTap: () {}, // Handled by GestureDetector
+                        onTap: () {}, // Tap handled by GestureDetector
                         highlightColor: Colors.transparent,
                         splashColor: Colors.transparent,
                       ),
